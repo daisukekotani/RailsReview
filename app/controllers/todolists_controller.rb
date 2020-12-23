@@ -1,7 +1,7 @@
 class TodolistsController < ApplicationController
-  def new
-    @list = List.new
-  end
+  # def new
+  #   @list = List.new
+  # end
   
   def create
     list = List.new(list_params)
@@ -10,6 +10,7 @@ class TodolistsController < ApplicationController
   end
   
   def index
+    @list = List.new
     @lists = List.all
   end
   
