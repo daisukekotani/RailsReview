@@ -7,7 +7,7 @@ class TodolistsController < ApplicationController
   def create
     @list = List.new(list_params)
     @list.save
-    # redirect_to root_path
+    @lists = List.all
   end
   
   def destroy
