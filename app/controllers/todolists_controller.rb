@@ -1,18 +1,25 @@
 class TodolistsController < ApplicationController
-  # def new
-  #   @list = List.new
-  # end
-  
-  def create
-    list = List.new(list_params)
-    list.save
-    redirect_to root_path
-  end
-  
-  def index
+  def new
     @list = List.new
     @lists = List.all
   end
+  
+  def create
+    @list = List.new(list_params)
+    @list.save
+    # redirect_to root_path
+  end
+  
+  def destroy
+    list = List.find(params[:id])  # データ（レコード）を1件取得
+    list.destroy  # データ（レコード）を削除
+    redirect_to root_path
+  end  
+  
+  # def index
+  #   @list = List.new
+  #   @lists = List.all
+  # end
   
   def show
     @list = List.find(params[:id])
@@ -26,12 +33,6 @@ class TodolistsController < ApplicationController
     list = List.find(params[:id])
     list.update(list_params)
      redirect_to root_path
-  end  
-  
-  def destroy
-    list = List.find(params[:id])  # データ（レコード）を1件取得
-    list.destroy  # データ（レコード）を削除
-    redirect_to root_path
   end  
   
   private
