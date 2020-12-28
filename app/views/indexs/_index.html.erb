@@ -16,9 +16,7 @@
                 <td><%= link_to 'Show', todolist_path(list.id) %></td>
                 <td><%= link_to "Edit", edit_todolist_path(list.id) %></td>
                 <td>
-                    <div class = "destroy" >
                     <%= link_to 'Destroy', todolist_path(list.id), method: :delete, remote:true %>
-                    </div>
                 </td>
             </tr>
         <% end %>
