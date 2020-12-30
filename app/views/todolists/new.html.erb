@@ -5,6 +5,8 @@
   $("#hoge").css("color","red")
 </script>
 
+<%= link_to '非同期通信まとめ', 'https://docs.google.com/presentation/d/1rapxnM-5J2gxyufL04LYRsE6gSyt7swXWW24eXOwNFM/edit#slide=id.p'%>
+
 <h1>新規投稿</h1>
 <%= form_with model:@list, url:'/todolists', remote:true do |f| %><!--非同期①local:trueをremote:trueに変更-->
 <h4>タイトル</h4>
